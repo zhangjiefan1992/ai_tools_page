@@ -1,0 +1,10 @@
+---
+interface Props {
+  type: 'WebSite' | 'Article' | 'BreadcrumbList';
+  data: Record<string, any>;
+}
+
+const { data } = Astro.props;
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(data)} />

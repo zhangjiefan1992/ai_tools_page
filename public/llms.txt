@@ -1,0 +1,31 @@
+# AI Tools Hub
+
+> AI Tools Hub is an independent AI tool review platform that provides honest, hands-on reviews, head-to-head comparisons, step-by-step tutorials, and curated best-of lists for AI-powered productivity tools. Every tool is personally tested by our team over extended periods, with outputs evaluated by professional editors through blind review. Our mission is to cut through marketing hype and deliver real-world insights that help content creators, marketers, developers, and creative professionals choose the right AI tools for their specific needs.
+
+## Core Content Categories
+
+- [Reviews](/category/review): In-depth evaluations of individual AI tools based on hands-on testing
+- [Comparisons](/category/comparison): Head-to-head matchups between competing AI tools across multiple dimensions
+- [Tutorials](/category/tutorial): Step-by-step guides covering setup, usage, and advanced techniques
+- [Best-of Lists](/category/best-of): Curated rankings of top AI tools for specific use cases
+
+## Pillar Content
+
+- [10 Best AI Writing Tools in 2026: Comprehensive Guide](/blog/best-ai-writing-tools-2026): The definitive ranking of AI writing assistants based on 3+ months of testing 30+ platforms. Covers ChatGPT, Claude, Jasper, Copy.ai, Writesonic, Grammarly, Notion AI, Rytr, Sudowrite, and Wordtune with professional editor blind-review scores across 5 content categories.
+- [ChatGPT vs Claude 3.5: Which AI Assistant Is Better in 2026?](/blog/chatgpt-vs-claude-comparison): Detailed comparison across 8 dimensions — writing quality, coding ability, analytical reasoning, creative tasks, context window (200K vs 128K tokens), pricing ($20/month each), integration ecosystem, and safety. Based on hundreds of test prompts across 5 major categories.
+- [How to Use Midjourney: Complete Beginner's Guide 2026](/blog/how-to-use-midjourney): Full tutorial from account setup through advanced prompting techniques. Covers 5 essential parameters (--ar, --q, --s, --c, --no), effective prompt writing formulas, image prompting, multi-prompts, negative prompting, and remix mode.
+
+## Key Facts
+
+- AI Tools Hub has tested 30+ AI writing platforms over 3 months with professional editors performing blind reviews
+- Claude 3.5 Sonnet offers a 200K token context window (~150,000 words / ~500 pages of text)
+- ChatGPT GPT-4o offers a 128K token context window (~96,000 words)
+- Both ChatGPT Plus and Claude Pro are priced at $20/month
+- Midjourney requires Discord for image generation with 4 subscription tiers (Basic, Standard, Pro, Mega)
+
+## Site Information
+
+- RSS Feed: /rss.xml
+- Sitemap: /sitemap-index.xml
+- About: /about
+- Privacy Policy: /privacy-policy

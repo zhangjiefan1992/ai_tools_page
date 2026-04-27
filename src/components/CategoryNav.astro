@@ -1,0 +1,32 @@
+---
+import { CATEGORIES } from '../config';
+
+const { activeCategory } = Astro.props;
+---
+
+<nav class="flex flex-wrap gap-2 mb-8" aria-label="Categories">
+  <a
+    href="/"
+    class:list={[
+      'px-4 py-2 rounded-full text-sm font-medium transition-colors',
+      !activeCategory
+        ? 'bg-blue-600 text-white'
+        : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+    ]}
+  >
+    All
+  </a>
+  {CATEGORIES.map(cat => (
+    <a
+      href={`/category/${cat.slug}`}
+      class:list={[
+        'px-4 py-2 rounded-full text-sm font-medium transition-colors',
+        activeCategory === cat.slug
+          ? 'bg-blue-600 text-white'
+          : 'bg-gray-100 text-gray-700 hover:bg-gray-200',
+      ]}
+    >
+      {cat.label}
+    </a>
+  ))}
+</nav>

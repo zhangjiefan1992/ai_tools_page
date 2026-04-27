@@ -1,0 +1,65 @@
+---
+interface Props {
+  slot: string;
+  format?: 'auto' | 'fluid' | 'rectangle' | 'horizontal' | 'vertical';
+  layout?: 'in-article' | 'display';
+  className?: string;
+  dataAdSlot?: string;
+}
+
+const {
+  slot: adSlot,
+  format = 'auto',
+  layout = 'display',
+  className = '',
+  dataAdSlot,
+} = Astro.props;
+
+const adClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
+const showAd = !!adClient;
+---
+
+{showAd ? (
+  <div
+    class:list={[
+      'ad-unit my-8 flex justify-center',
+      { 'mx-auto max-w-2xl': layout === 'in-article' },
+      className,
+    ]}
+    data-ad-slot-name={adSlot}
+    aria-label="Advertisement"
+  >
+    {layout === 'in-article' ? (
+      <ins
+        class="adsbygoogle"
+        style="display:block; text-align:center;"
+        data-ad-layout="in-article"
+        data-ad-format="fluid"
+        data-ad-client={adClient}
+        data-ad-slot={dataAdSlot || import.meta.env.PUBLIC_ADSENSE_IN_ARTICLE_SLOT}
+      ></ins>
+    ) : (
+      <ins
+        class="adsbygoogle"
+        style="display:block;"
+        data-ad-client={adClient}
+        data-ad-slot={dataAdSlot || import.meta.env.PUBLIC_ADSENSE_DISPLAY_SLOT}
+        data-ad-format={format}
+        data-full-width-responsive="true"
+      ></ins>
+    )}
+    <script is:inline>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+) : (
+  <div
+    class:list={[
+      'ad-unit-placeholder my-8 border-2 border-dashed border-gray-300 rounded-lg',
+      'flex items-center justify-center text-gray-400 text-sm bg-gray-50',
+      { 'h-24': layout === 'in-article', 'h-64': layout !== 'in-article' },
+      className,
+    ]}
+    data-ad-slot-name={adSlot}
+  >
+    <span>Ad Placeholder: {adSlot}</span>
+  </div>
+)}

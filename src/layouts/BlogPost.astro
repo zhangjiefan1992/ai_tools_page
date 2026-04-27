@@ -1,0 +1,116 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import TOC from '../components/TOC.astro';
+import AdUnit from '../components/AdUnit.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import AuthorCard from '../components/AuthorCard.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+import { formatDate } from '../utils/datetime';
+import { SITE } from '../config';
+
+const { post } = Astro.props;
+const { Content, headings } = await post.render();
+const {
+  title, description, publishDate, updatedDate,
+  category, tags, author, image,
+} = post.data;
+
+const articleUrl = new URL(`/blog/${post.slug}`, Astro.site).href;
+---
+
+<BaseLayout
+  title={title}
+  description={description}
+  image={image}
+  type="article"
+  articleDate={publishDate.toISOString()}
+>
+  <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={[
+      { label: 'Home', href: '/' },
+      { label: category, href: `/category/${category}` },
+      { label: title },
+    ]} />
+
+    <header class="mb-8">
+      <div class="flex items-center gap-3 mb-4">
+        <a
+          href={`/category/${category}`}
+          class="text-sm font-semibold text-blue-600 bg-blue-50 px-3 py-1 rounded-full"
+        >
+          {category}
+        </a>
+        <time datetime={publishDate.toISOString()} class="text-sm text-gray-500">
+          {formatDate(publishDate)}
+        </time>
+      </div>
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-gray-900 leading-tight mb-4">
+        {title}
+      </h1>
+      <p class="text-lg text-gray-600">{description}</p>
+    </header>
+
+    {image && (
+      <img
+        src={image}
+        alt={title}
+        class="w-full rounded-xl mb-8 aspect-video object-cover"
+        width="1200"
+        height="630"
+        loading="eager"
+      />
+    )}
+
+    <AdUnit slot="before-content" layout="display" format="horizontal" className="mb-8" />
+
+    <TOC headings={headings} />
+
+    <div class="prose prose-lg max-w-none prose-headings:scroll-mt-20 prose-a:text-blue-600 prose-img:rounded-xl" id="article-content">
+      <Content />
+    </div>
+
+    <AdUnit slot="after-content" layout="in-article" className="my-8" />
+
+    <ShareButtons url={articleUrl} title={title} description={description} />
+
+    <AuthorCard name={author} />
+
+    <RelatedPosts currentSlug={post.slug} category={category} tags={tags} />
+  </article>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const adClient = document.querySelector('script[data-ad-client]')?.getAttribute('data-ad-client');
+      if (!adClient) return;
+
+      const placeholders = document.querySelectorAll('.ad-injection-point');
+      const inArticleSlot = document.querySelector('meta[name="adsense-in-article-slot"]')?.getAttribute('content') || '';
+
+      placeholders.forEach((el, index) => {
+        const adContainer = document.createElement('div');
+        adContainer.className = 'ad-unit my-8 flex justify-center';
+        adContainer.setAttribute('aria-label', 'Advertisement');
+
+        const ins = document.createElement('ins');
+        ins.className = 'adsbygoogle';
+        ins.style.display = 'block';
+        ins.style.textAlign = 'center';
+        ins.setAttribute('data-ad-layout', 'in-article');
+        ins.setAttribute('data-ad-format', 'fluid');
+        ins.setAttribute('data-ad-client', adClient);
+        ins.setAttribute('data-ad-slot', inArticleSlot);
+
+        adContainer.appendChild(ins);
+        el.replaceWith(adContainer);
+
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          // AdSense not loaded yet
+        }
+      });
+    });
+  </script>
+</BaseLayout>

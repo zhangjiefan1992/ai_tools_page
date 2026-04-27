@@ -1,0 +1,32 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../config';
+---
+
+<PageLayout
+  title="Privacy Policy"
+  description={`Privacy Policy for ${SITE.name}. Learn how we collect, use, and protect your data.`}
+>
+  <div class="prose prose-lg max-w-3xl mx-auto">
+    <h1>Privacy Policy</h1>
+    <p><em>Last updated: April 2026</em></p>
+
+    <h2>Information We Collect</h2>
+    <p>We collect information through Google Analytics and Google AdSense to improve our website and deliver relevant content and advertisements to our visitors.</p>
+
+    <h2>Google Analytics</h2>
+    <p>We use Google Analytics 4 to understand how visitors interact with our website. This service collects anonymous usage data including pages visited, time spent, and device information. This data helps us improve our content and user experience.</p>
+
+    <h2>Google AdSense</h2>
+    <p>We use Google AdSense to display advertisements. Google may use cookies to serve ads based on your prior visits to this and other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads">Google Ads Settings</a>.</p>
+
+    <h2>Cookies</h2>
+    <p>This website uses cookies from third-party services (Google Analytics and Google AdSense). These cookies help us analyze website traffic and serve relevant advertisements. You can control cookie settings through your browser preferences.</p>
+
+    <h2>Third-Party Links</h2>
+    <p>Our articles may contain links to external websites. We are not responsible for the privacy practices of these websites. We encourage you to review the privacy policies of any third-party sites you visit.</p>
+
+    <h2>Contact Us</h2>
+    <p>If you have questions about this Privacy Policy, contact us at <a href="mailto:privacy@your-domain.com">privacy@your-domain.com</a>.</p>
+  </div>
+</PageLayout>

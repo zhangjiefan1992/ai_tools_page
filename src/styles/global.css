@@ -1,0 +1,86 @@
+/* Tailwind CSS 基础指令 */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 自定义基础样式 */
+@layer base {
+  :root {
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system,
+      BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+      sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo,
+      Monaco, Consolas, monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    @apply text-gray-900 bg-white;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-400;
+  }
+}
+
+/* 自定义 prose 样式覆盖 */
+@layer components {
+  .prose pre {
+    @apply rounded-xl border border-gray-200;
+  }
+
+  .prose code:not(pre code) {
+    @apply bg-gray-100 text-gray-800 px-1.5 py-0.5 rounded text-sm font-normal;
+  }
+
+  .prose code:not(pre code)::before,
+  .prose code:not(pre code)::after {
+    content: none;
+  }
+
+  .ad-injection-point {
+    display: block;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .prose img {
+    @apply rounded-xl shadow-sm;
+  }
+
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 bg-blue-50 rounded-r-lg px-4;
+  }
+}
+
+@layer utilities {
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

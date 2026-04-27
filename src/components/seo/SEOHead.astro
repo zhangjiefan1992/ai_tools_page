@@ -1,0 +1,56 @@
+---
+import OpenGraph from './OpenGraph.astro';
+import JsonLd from './JsonLd.astro';
+import { SITE } from '../../config';
+
+interface Props {
+  title: string;
+  description: string;
+  image: string;
+  canonicalURL: string;
+  articleDate?: string;
+  noindex?: boolean;
+  type: 'website' | 'article';
+}
+
+const {
+  title,
+  description,
+  image,
+  canonicalURL,
+  articleDate,
+  noindex = false,
+  type,
+} = Astro.props;
+---
+
+<title>{title}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+{noindex && <meta name="robots" content="noindex, nofollow" />}
+{!noindex && <meta name="robots" content="index, follow" />}
+
+<meta name="generator" content={Astro.generator} />
+
+<OpenGraph
+  title={title}
+  description={description}
+  image={image}
+  url={canonicalURL}
+  type={type}
+  articleDate={articleDate}
+/>
+
+{type === 'website' && (
+  <JsonLd
+    type="WebSite"
+    data={{
+      '@context': 'https://schema.org',
+      '@type': 'WebSite',
+      name: SITE.name,
+      description: SITE.description,
+      url: SITE.url,
+    }}
+  />
+)}

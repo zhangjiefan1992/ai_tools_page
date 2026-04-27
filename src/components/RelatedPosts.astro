@@ -1,0 +1,42 @@
+---
+import { getRelatedPosts } from '../utils/posts';
+import { formatDate } from '../utils/datetime';
+
+interface Props {
+  currentSlug: string;
+  category: string;
+  tags: string[];
+  maxPosts?: number;
+}
+
+const { currentSlug, category, tags, maxPosts = 3 } = Astro.props;
+const relatedPosts = await getRelatedPosts(currentSlug, category, tags, maxPosts);
+---
+
+{relatedPosts.length > 0 && (
+  <section class="mt-12 pt-8 border-t border-gray-200">
+    <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Articles</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {relatedPosts.map(post => (
+        <a href={`/blog/${post.slug.replace('en/', '')}`} class="group block">
+          {post.data.image && (
+            <img
+              src={post.data.image}
+              alt={post.data.title}
+              class="w-full aspect-video object-cover rounded-lg mb-3 group-hover:opacity-90 transition-opacity"
+              loading="lazy"
+              width="400"
+              height="225"
+            />
+          )}
+          <h3 class="font-semibold text-gray-900 group-hover:text-blue-600 transition-colors line-clamp-2">
+            {post.data.title}
+          </h3>
+          <time datetime={post.data.publishDate.toISOString()} class="text-xs text-gray-500 mt-1 block">
+            {formatDate(post.data.publishDate)}
+          </time>
+        </a>
+      ))}
+    </div>
+  </section>
+)}

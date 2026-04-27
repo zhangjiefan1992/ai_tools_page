@@ -1,0 +1,34 @@
+---
+interface Props {
+  name: string;
+  bio?: string;
+  avatar?: string;
+  twitter?: string;
+}
+
+const { name, bio, avatar, twitter } = Astro.props;
+---
+
+<div class="flex items-center gap-4 my-8 p-6 bg-gray-50 rounded-xl">
+  <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
+    {avatar ? (
+      <img src={avatar} alt={name} class="w-16 h-16 rounded-full object-cover" />
+    ) : (
+      <span class="text-2xl font-bold text-blue-600">{name.charAt(0)}</span>
+    )}
+  </div>
+  <div>
+    <h3 class="font-semibold text-gray-900">{name}</h3>
+    {bio && <p class="text-sm text-gray-600 mt-1">{bio}</p>}
+    {twitter && (
+      <a
+        href={`https://twitter.com/${twitter}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-sm text-blue-600 hover:underline mt-1 inline-block"
+      >
+        @{twitter}
+      </a>
+    )}
+  </div>
+</div>

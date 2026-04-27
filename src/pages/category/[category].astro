@@ -1,0 +1,46 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PostCard from '../../components/PostCard.astro';
+import CategoryNav from '../../components/CategoryNav.astro';
+import { getPublishedPosts } from '../../utils/posts';
+import { CATEGORIES } from '../../config';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPosts = await getPublishedPosts();
+
+  return CATEGORIES.map(cat => ({
+    params: { category: cat.slug },
+    props: {
+      category: cat,
+      posts: allPosts.filter(p => p.data.category === cat.slug),
+    },
+  }));
+};
+
+const { category, posts } = Astro.props;
+---
+
+<BaseLayout
+  title={`${category.label} - AI Tool ${category.label}`}
+  description={category.description}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <h1 class="text-3xl font-extrabold mb-2">{category.label}</h1>
+    <p class="text-gray-600 mb-8">{category.description}</p>
+    <CategoryNav activeCategory={category.slug} />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug.replace('en/', '')}
+          image={post.data.image}
+          category={post.data.category}
+          publishDate={post.data.publishDate}
+          tags={post.data.tags}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

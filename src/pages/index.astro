@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PostCard from '../components/PostCard.astro';
+import CategoryNav from '../components/CategoryNav.astro';
+import Pagination from '../components/Pagination.astro';
+import AdUnit from '../components/AdUnit.astro';
+import { getPublishedPosts } from '../utils/posts';
+import { SITE, POSTS_PER_PAGE } from '../config';
+
+const allPosts = await getPublishedPosts();
+
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+const featuredPost = allPosts.find(p => p.data.featured);
+---
+
+<BaseLayout
+  title="AI Tool Reviews, Tutorials & Comparisons"
+  description={SITE.description}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <CategoryNav />
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map((post, index) => (
+        <>
+          <PostCard
+            title={post.data.title}
+            description={post.data.description}
+            slug={post.slug.replace('en/', '')}
+            image={post.data.image}
+            category={post.data.category}
+            publishDate={post.data.publishDate}
+            tags={post.data.tags}
+          />
+          {(index + 1) % 6 === 0 && index < posts.length - 1 && (
+            <div class="md:col-span-2 lg:col-span-3">
+              <AdUnit slot={`home-feed-${Math.floor(index / 6)}`} layout="display" format="horizontal" />
+            </div>
+          )}
+        </>
+      ))}
+    </div>
+
+    <Pagination
+      currentPage={1}
+      totalPages={totalPages}
+      baseUrl="/blog"
+    />
+  </div>
+</BaseLayout>

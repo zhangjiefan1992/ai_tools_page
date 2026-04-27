@@ -1,0 +1,22 @@
+---
+const { headings } = Astro.props;
+const tocItems = headings.filter(h => h.depth >= 2 && h.depth <= 3);
+---
+
+{tocItems.length > 0 && (
+  <nav class="toc bg-gray-50 rounded-lg p-4 mb-8" aria-label="Table of Contents">
+    <h2 class="text-sm font-bold text-gray-900 uppercase tracking-wide mb-3">Table of Contents</h2>
+    <ul class="space-y-1.5 text-sm">
+      {tocItems.map(item => (
+        <li class:list={[{ 'ml-4': item.depth === 3 }]}>
+          <a
+            href={`#${item.slug}`}
+            class="text-gray-600 hover:text-blue-600 transition-colors block py-0.5"
+          >
+            {item.text}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+)}
