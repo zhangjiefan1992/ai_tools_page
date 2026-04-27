@@ -1,3 +1,5 @@
 name = "ai-tools-page"
-pages_build_output_dir = "dist"
 compatibility_date = "2026-04-27"
+
+[assets]
+directory = "./dist"
