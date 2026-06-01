@@ -10,7 +10,7 @@ tags:
   - marketing-automation
   - ai-copywriting
   - workflow-automation
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Copy.ai workflow automation interface showing sales copy generation and marketing templates"
 draft: false

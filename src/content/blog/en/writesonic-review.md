@@ -10,7 +10,7 @@ tags:
   - ai-blog-writing
   - content-generation
   - chatsonic
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Writesonic AI Article Writer interface showing SEO optimization score and content generation"
 draft: false

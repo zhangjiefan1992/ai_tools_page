@@ -10,7 +10,7 @@ tags:
   - content-generation
   - ai-copywriting
   - marketing-automation
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Jasper AI dashboard showing marketing campaign workflow and content templates"
 draft: false

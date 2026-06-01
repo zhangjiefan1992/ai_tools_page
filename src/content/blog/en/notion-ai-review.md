@@ -10,7 +10,7 @@ tags:
   - workspace-assistant
   - note-taking
   - ai-summarization
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Notion AI assistant interface showing summarization and writing features within a workspace document"
 draft: false

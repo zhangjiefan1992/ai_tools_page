@@ -10,7 +10,7 @@ tags:
   - writing-assistant
   - proofreading
   - content-editing
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Grammarly Premium interface showing tone detection and AI writing suggestions in a document"
 draft: false

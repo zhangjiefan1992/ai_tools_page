@@ -8,7 +8,7 @@ tags:
   - ai-art
   - image-generation
   - tutorial
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Midjourney AI art generation interface"
 draft: false

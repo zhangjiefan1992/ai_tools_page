@@ -1,6 +1,6 @@
-# AI Tools Hub
+# Pick My AI
 
-> AI Tools Hub is an independent AI tool review platform that provides honest, hands-on reviews, head-to-head comparisons, step-by-step tutorials, and curated best-of lists for AI-powered productivity tools. Every tool is personally tested by our team over extended periods, with outputs evaluated by professional editors through blind review. Our mission is to cut through marketing hype and deliver real-world insights that help content creators, marketers, developers, and creative professionals choose the right AI tools for their specific needs.
+> Pick My AI is an independent AI tool review platform that provides honest, hands-on reviews, head-to-head comparisons, step-by-step tutorials, and curated best-of lists for AI-powered productivity tools. Every tool is personally tested by our team over extended periods, with outputs evaluated by professional editors through blind review. Our mission is to cut through marketing hype and deliver real-world insights that help content creators, marketers, developers, and creative professionals choose the right AI tools for their specific needs.
 
 ## Core Content Categories
 
@@ -17,7 +17,7 @@
 
 ## Key Facts
 
-- AI Tools Hub has tested 30+ AI writing platforms over 3 months with professional editors performing blind reviews
+- Pick My AI has tested 30+ AI writing platforms over 3 months with professional editors performing blind reviews
 - Claude 3.5 Sonnet offers a 200K token context window (~150,000 words / ~500 pages of text)
 - ChatGPT GPT-4o offers a 128K token context window (~96,000 words)
 - Both ChatGPT Plus and Claude Pro are priced at $20/month

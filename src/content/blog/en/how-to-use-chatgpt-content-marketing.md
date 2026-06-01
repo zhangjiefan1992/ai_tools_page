@@ -11,7 +11,7 @@ tags:
   - prompt-engineering
   - social-media
   - email-marketing
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "ChatGPT interface showing content marketing prompts and generated blog outlines"
 draft: false

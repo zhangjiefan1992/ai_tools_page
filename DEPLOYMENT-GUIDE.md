@@ -1,4 +1,4 @@
-# AI Tools Hub 部署与配置完整指南
+# Pick My AI 部署与配置完整指南
 
 > 本指南涵盖从环境配置到正式上线的所有步骤，请按顺序完成各部分配置。
 
@@ -24,7 +24,7 @@
 1. 访问 [Google Analytics](https://analytics.google.com/)，使用 Google 账号登录
 2. 点击左下角 **管理（Admin）** 齿轮图标
 3. 在「属性」列中点击 **创建属性（Create Property）**
-4. 填写属性名称：`AI Tools Hub`
+4. 填写属性名称：`Pick My AI`
 5. 选择报告时区和货币
 6. 点击 **下一步**，选择行业类别为「技术」，企业规模选「小型」
 7. 选择业务目标（勾选「获取流量报告」和「了解用户行为」）
@@ -33,8 +33,8 @@
 ### 1.2 设置数据流（Data Stream）
 
 1. 在属性创建完成后，选择 **Web** 平台
-2. 输入网站 URL（例如：`https://your-domain.com`）
-3. 输入数据流名称：`AI Tools Hub - Web`
+2. 输入网站 URL（例如：`https://pick-my-ai.com`）
+3. 输入数据流名称：`Pick My AI - Web`
 4. 点击 **创建数据流**
 
 ### 1.3 获取 Measurement ID
@@ -91,10 +91,10 @@ PUBLIC_GA_ID=G-XXXXXXXXXX
 #### 广告单元 Slot ID
 1. 在 AdSense 后台 → **广告（Ads）** → **按广告单元（By ad unit）**
 2. 创建 **文章内嵌广告（In-article ad）**：
-   - 命名为 `AI Tools Hub - In Article`
+   - 命名为 `Pick My AI - In Article`
    - 创建后获得 Slot ID（纯数字，如 `1234567890`）
 3. 创建 **展示广告（Display ad）**：
-   - 命名为 `AI Tools Hub - Display`
+   - 命名为 `Pick My AI - Display`
    - 选择「响应式」尺寸
    - 创建后获得 Slot ID（纯数字，如 `0987654321`）
 
@@ -147,7 +147,7 @@ PUBLIC_ADSENSE_DISPLAY_SLOT=0987654321
 
 # 网站 URL（用于 sitemap、RSS、canonical URLs）
 # 格式：完整 URL，不带末尾斜杠
-SITE_URL=https://your-domain.com
+SITE_URL=https://pick-my-ai.com
 ```
 
 ### 3.2 本地开发 vs Vercel 部署对比
@@ -171,11 +171,11 @@ SITE_URL=https://your-domain.com
 # 在项目根目录执行
 git init
 git add .
-git commit -m "Initial commit: AI Tools Hub"
+git commit -m "Initial commit: Pick My AI"
 
-# 在 GitHub 上创建新仓库（名称建议：ai-tools-hub）
+# 在 GitHub 上创建新仓库（名称建议：pick-my-ai）
 # 然后关联远程仓库
-git remote add origin https://github.com/YOUR_USERNAME/ai-tools-hub.git
+git remote add origin https://github.com/YOUR_USERNAME/pick-my-ai.git
 git branch -M main
 git push -u origin main
 ```
@@ -184,7 +184,7 @@ git push -u origin main
 
 1. 访问 [Vercel Dashboard](https://vercel.com/dashboard)
 2. 点击 **Add New...** → **Project**
-3. 选择 **Import Git Repository**，找到 `ai-tools-hub` 仓库
+3. 选择 **Import Git Repository**，找到 `pick-my-ai` 仓库
 4. 点击 **Import**
 
 ### 4.3 配置构建设置
@@ -211,7 +211,7 @@ Vercel 会自动检测 Astro 框架，确认以下设置：
 | `PUBLIC_ADSENSE_CLIENT` | `ca-pub-XXXXXXXXXXXXXXXX` | Production |
 | `PUBLIC_ADSENSE_IN_ARTICLE_SLOT` | `1234567890` | Production |
 | `PUBLIC_ADSENSE_DISPLAY_SLOT` | `0987654321` | Production |
-| `SITE_URL` | `https://your-domain.com` | Production, Preview |
+| `SITE_URL` | `https://pick-my-ai.com` | Production, Preview |
 
 3. 点击 **Save** 保存
 
@@ -224,7 +224,7 @@ Vercel 会自动检测 Astro 框架，确认以下设置：
 ### 4.6 自定义域名配置（可选）
 
 1. 在 Vercel 项目中进入 **Settings** → **Domains**
-2. 输入你的域名（如 `aitoolshub.com`）并点击 **Add**
+2. 输入你的域名（如 `pick-my-ai.com`）并点击 **Add**
 3. Vercel 会提供 DNS 配置指引
 
 ### 4.7 DNS CNAME 设置
@@ -252,10 +252,10 @@ Vercel 会自动检测 Astro 框架，确认以下设置：
 
 ### 5.1 更新 `public/robots.txt`
 
-将文件中的 `your-domain.com` 替换为真实域名：
+将文件中的 `pick-my-ai.com` 替换为真实域名：
 
 ```
-Sitemap: https://aitoolshub.com/sitemap-index.xml
+Sitemap: https://pick-my-ai.com/sitemap-index.xml
 ```
 
 ### 5.2 更新 `astro.config.mjs`
@@ -263,7 +263,7 @@ Sitemap: https://aitoolshub.com/sitemap-index.xml
 修改 site 配置的默认值：
 
 ```javascript
-site: process.env.SITE_URL || 'https://aitoolshub.com',
+site: process.env.SITE_URL || 'https://pick-my-ai.com',
 ```
 
 ### 5.3 更新 `src/config.ts`
@@ -272,11 +272,11 @@ site: process.env.SITE_URL || 'https://aitoolshub.com',
 
 ```typescript
 export const SITE = {
-  name: 'AI Tools Hub',
+  name: 'Pick My AI',
   description: 'Honest reviews, tutorials, and comparisons of the best AI tools to boost your productivity.',
-  url: 'https://aitoolshub.com',
-  author: 'AI Tools Hub Team',
-  email: 'contact@aitoolshub.com',
+  url: 'https://pick-my-ai.com',
+  author: 'Pick My AI Team',
+  email: 'contact@pick-my-ai.com',
   language: 'en',
 } as const;
 ```
@@ -284,10 +284,10 @@ export const SITE = {
 ### 5.4 更新 `.env` 文件
 
 ```bash
-SITE_URL=https://aitoolshub.com
+SITE_URL=https://pick-my-ai.com
 ```
 
-> 注意：以上示例中的 `aitoolshub.com` 需替换为你的真实域名。
+> 注意：以上示例中的 `pick-my-ai.com` 需替换为你的真实域名。
 
 ---
 
@@ -417,7 +417,7 @@ draft: false
 
 ### 域名相关
 
-- [ ] `public/robots.txt` 中的域名已从 `your-domain.com` 更新为真实域名
+- [ ] `public/robots.txt` 中的域名已从 `pick-my-ai.com` 更新为真实域名
 - [ ] `public/ads.txt` 中的 Publisher ID 已更新为真实 ID
 - [ ] `astro.config.mjs` 中 site URL 已更新
 - [ ] `src/config.ts` 中 `SITE.url` 已更新为真实域名

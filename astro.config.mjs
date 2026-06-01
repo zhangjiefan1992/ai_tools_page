@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import rehypeAdInjector from './src/plugins/rehype-ad-injector';
 
 export default defineConfig({
-  site: process.env.SITE_URL || 'https://your-domain.com',
+  site: process.env.SITE_URL || 'https://pick-my-ai.com',
   output: 'static',
   trailingSlash: 'never',
   compressHTML: true,

@@ -6,7 +6,7 @@ Disallow: /draft/
 Disallow: /api/
 
 # Sitemap location
-Sitemap: https://your-domain.com/sitemap-index.xml
+Sitemap: https://pick-my-ai.com/sitemap-index.xml
 
 # Crawl-delay for polite bots
 User-agent: AdsBot-Google

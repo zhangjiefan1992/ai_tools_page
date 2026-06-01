@@ -11,7 +11,7 @@ tags:
   - grammarly
   - notion-ai
   - canva-ai
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Student using free AI tools on a laptop for studying and assignments"
 draft: false

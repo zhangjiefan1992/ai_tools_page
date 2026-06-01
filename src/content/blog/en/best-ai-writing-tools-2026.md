@@ -9,7 +9,7 @@ tags:
   - content-creation
   - productivity
   - tools-roundup
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Best AI writing tools comparison chart"
 draft: false

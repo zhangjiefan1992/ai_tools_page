@@ -10,7 +10,7 @@ tags:
   - ai-writing
   - advanced-prompting
   - ai-tools
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Claude AI interface demonstrating structured prompting with XML tags and system instructions"
 draft: false

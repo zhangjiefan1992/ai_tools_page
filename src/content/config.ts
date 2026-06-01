@@ -21,7 +21,7 @@ const blogCollection = defineCollection({
         .array(z.string().toLowerCase().trim())
         .min(1, 'At least one tag is required')
         .max(8, 'Maximum 8 tags allowed'),
-      author: z.string().default('AI Tools Hub Team'),
+      author: z.string().default('Pick My AI Team'),
       authorAvatar: z.string().url().optional(),
       authorTwitter: z.string().optional(),
       image: z.string().optional(),

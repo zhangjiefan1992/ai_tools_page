@@ -1,8 +1,8 @@
-# AI Tools Hub 文章写作规范
+# Pick My AI 文章写作规范
 
 > **本文档用途**：作为 AI 统筹 Agent 生成博客文章的**唯一参考规范**。AI Agent 只需阅读本文档，即可生成完全符合项目技术标准和内容要求的文章，无需参考其他文件。
 
-- **项目名称**：AI Tools Hub
+- **项目名称**：Pick My AI
 - **技术栈**：Astro SSG + Markdown Content Collections
 - **文章语言**：英文（English）
 - **站点描述**：Honest reviews, tutorials, and comparisons of the best AI tools to boost your productivity.
@@ -35,7 +35,7 @@
 | `updatedDate` | date | 选填 | ISO 日期格式 | 最后更新日期 | `2026-04-25` |
 | `category` | enum | **必填** | 仅限 4 个值之一 | 文章分类，见下方分类说明 | `review` |
 | `tags` | string[] | **必填** | 1-8 个标签，全小写 | 文章标签，自动转小写和去除空格 | `["ai-writing", "content-creation", "productivity"]` |
-| `author` | string | 选填 | — | 作者名称，默认值 `"AI Tools Hub Team"` | `"AI Tools Hub Team"` |
+| `author` | string | 选填 | — | 作者名称，默认值 `"Pick My AI Team"` | `"Pick My AI Team"` |
 | `authorAvatar` | string | 选填 | 合法 URL | 作者头像地址 | `"https://example.com/avatar.jpg"` |
 | `authorTwitter` | string | 选填 | 不含 `@` 符号 | 作者 Twitter 用户名 | `"alexchen_ai"` |
 | `image` | string | 选填 | — | 文章特色图片路径 | `"/images/placeholder.svg"` |
@@ -201,7 +201,7 @@ tags:
   - [tool-name]
   - ai-tools
   - review
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "[工具名] review featured image"
 draft: false
@@ -222,7 +222,7 @@ tags:
   - [tool-b-name]
   - comparison
   - ai-tools
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Side by side comparison of [工具A] and [工具B]"
 draft: false
@@ -242,7 +242,7 @@ tags:
   - [tool-name]
   - tutorial
   - how-to
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Step-by-step guide to using [工具名]"
 draft: false
@@ -263,7 +263,7 @@ tags:
   - ai-tools
   - tools-roundup
   - best-of
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Best [类别] tools comparison chart"
 draft: false
@@ -329,7 +329,7 @@ featured: false
 - [ ] `publishDate` 已填写，格式为 `YYYY-MM-DD`
 - [ ] `category` 值为 `review` / `comparison` / `tutorial` / `best-of` 之一
 - [ ] `tags` 至少 1 个，最多 8 个，全小写连字符格式
-- [ ] `author` 已填写（可使用默认值 `"AI Tools Hub Team"`）
+- [ ] `author` 已填写（可使用默认值 `"Pick My AI Team"`）
 - [ ] `image` 和 `imageAlt` 已填写
 
 ### 内容检查

@@ -12,7 +12,7 @@ tags:
   - jasper-ai
   - grammarly
   - surfer-seo
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Diagram showing an AI-powered writing workflow from research to optimization with multiple tools"
 draft: false

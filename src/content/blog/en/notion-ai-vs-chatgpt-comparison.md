@@ -10,7 +10,7 @@ tags:
   - productivity
   - comparison
   - workflow
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Notion AI workspace and ChatGPT interface comparison"
 draft: false

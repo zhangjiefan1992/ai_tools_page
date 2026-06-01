@@ -10,7 +10,7 @@ tags:
   - ai-copywriting
   - comparison
   - content-creation
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Jasper and Copy.ai interface comparison for AI marketing content"
 draft: false

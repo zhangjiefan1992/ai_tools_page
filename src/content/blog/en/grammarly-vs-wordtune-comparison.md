@@ -10,7 +10,7 @@ tags:
   - grammar-checker
   - comparison
   - writing-tools
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Grammarly and Wordtune AI writing enhancement tools side by side"
 draft: false

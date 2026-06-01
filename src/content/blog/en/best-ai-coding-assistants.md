@@ -11,7 +11,7 @@ tags:
   - codeium
   - tabnine
   - developer-tools
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Developer using an AI coding assistant with inline code suggestions in their IDE"
 draft: false

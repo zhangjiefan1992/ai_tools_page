@@ -11,7 +11,7 @@ tags:
   - hubspot-ai
   - ai-marketing
   - ai-customer-service
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Small business owner reviewing AI tools on a computer dashboard"
 draft: false

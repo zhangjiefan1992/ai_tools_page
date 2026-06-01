@@ -10,7 +10,7 @@ tags:
   - comparison
   - ai-art
   - creative-tools
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Midjourney and DALL-E 3 AI generated image comparison"
 draft: false

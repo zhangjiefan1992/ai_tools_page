@@ -10,7 +10,7 @@ tags:
   - content-marketing
   - tutorial
   - brand-consistency
-author: "AI Tools Hub Team"
+author: "Pick My AI Team"
 image: "/images/placeholder.svg"
 imageAlt: "Jasper AI Brand Voice setup interface showing voice profile configuration and sample content uploads"
 draft: false
