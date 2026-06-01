@@ -17,7 +17,12 @@ const {
   category, tags, author, image,
 } = post.data;
 
-const articleUrl = new URL(`/blog/${post.slug}`, Astro.site).href;
+const lang = post.slug.startsWith('zh/') ? 'zh' : 'en';
+const cleanSlug = post.slug.replace(/^(en|zh)\//, '');
+const articleUrl = new URL(
+  lang === 'en' ? `/blog/${cleanSlug}` : `/${lang}/blog/${cleanSlug}`,
+  Astro.site
+).href;
 ---
 
 <BaseLayout

@@ -1,0 +1,20 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BlogPost from '../../../layouts/BlogPost.astro';
+import { getCollection } from 'astro:content';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+
+  return posts
+    .filter(post => post.slug.startsWith('zh/'))
+    .map(post => ({
+      params: { slug: post.slug.replace('zh/', '') },
+      props: { post },
+    }));
+};
+
+const { post } = Astro.props;
+---
+
+<BlogPost post={post} />

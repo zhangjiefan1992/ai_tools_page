@@ -1,8 +1,8 @@
 import { getCollection } from 'astro:content';
 
-export async function getPublishedPosts() {
+export async function getPublishedPosts(lang: string = 'en') {
   const posts = await getCollection('blog', ({ data, slug }) => {
-    return !data.draft && slug.startsWith('en/');
+    return !data.draft && slug.startsWith(`${lang}/`);
   });
 
   return posts.sort(
