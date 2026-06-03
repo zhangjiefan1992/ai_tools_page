@@ -11,7 +11,7 @@ tags:
   - comparison
   - writing-tools
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/grammarly-vs-wordtune-comparison-hero.png"
 imageAlt: "Grammarly and Wordtune AI writing enhancement tools side by side"
 draft: false
 featured: false

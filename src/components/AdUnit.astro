@@ -16,7 +16,11 @@ const {
 } = Astro.props;
 
 const adClient = import.meta.env.PUBLIC_ADSENSE_CLIENT;
-const showAd = !!adClient;
+const PLACEHOLDER_SLOTS = ['1234567890', '0987654321', ''];
+const inArticleSlot = import.meta.env.PUBLIC_ADSENSE_IN_ARTICLE_SLOT || '';
+const displaySlot = import.meta.env.PUBLIC_ADSENSE_DISPLAY_SLOT || '';
+const resolvedSlot = dataAdSlot || (layout === 'in-article' ? inArticleSlot : displaySlot);
+const showAd = !!adClient && !PLACEHOLDER_SLOTS.includes(resolvedSlot);
 ---
 
 {showAd ? (

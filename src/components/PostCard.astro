@@ -1,12 +1,12 @@
 ---
 import { formatDate } from '../utils/datetime';
 
-const { title, description, slug, image, category, publishDate, tags } = Astro.props;
+const { title, description, slug, image, category, publishDate, tags, baseUrl = '/blog' } = Astro.props;
 ---
 
 <article class="group rounded-xl overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300">
   {image && (
-    <a href={`/blog/${slug}`} class="block overflow-hidden aspect-video">
+    <a href={`${baseUrl}/${slug}`} class="block overflow-hidden aspect-video">
       <img
         src={image}
         alt={title}
@@ -31,7 +31,7 @@ const { title, description, slug, image, category, publishDate, tags } = Astro.p
       </time>
     </div>
     <h2 class="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">
-      <a href={`/blog/${slug}`}>{title}</a>
+      <a href={`${baseUrl}/${slug}`}>{title}</a>
     </h2>
     <p class="text-sm text-gray-600 line-clamp-3">{description}</p>
     {tags && tags.length > 0 && (

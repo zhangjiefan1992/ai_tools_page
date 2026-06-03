@@ -11,7 +11,7 @@ tags:
   - advanced-prompting
   - ai-tools
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/getting-started-with-claude-prompting-hero.png"
 imageAlt: "Claude AI interface demonstrating structured prompting with XML tags and system instructions"
 draft: false
 featured: false

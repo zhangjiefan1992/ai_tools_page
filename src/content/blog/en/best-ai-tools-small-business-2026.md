@@ -12,7 +12,7 @@ tags:
   - ai-marketing
   - ai-customer-service
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/best-ai-tools-small-business-2026-hero.png"
 imageAlt: "Small business owner reviewing AI tools on a computer dashboard"
 draft: false
 featured: false

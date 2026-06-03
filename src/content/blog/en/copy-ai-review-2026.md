@@ -11,7 +11,7 @@ tags:
   - ai-copywriting
   - workflow-automation
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/copy-ai-review-2026-hero.png"
 imageAlt: "Copy.ai workflow automation interface showing sales copy generation and marketing templates"
 draft: false
 featured: false

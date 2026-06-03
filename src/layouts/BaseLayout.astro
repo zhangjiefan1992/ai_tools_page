@@ -16,10 +16,11 @@ const {
 } = Astro.props;
 
 const fullTitle = `${title} | ${SITE.name}`;
+const lang = Astro.url.pathname.startsWith('/zh') ? 'zh' : 'en';
 ---
 
 <!doctype html>
-<html lang="en" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,11 +45,43 @@ const fullTitle = `${title} | ${SITE.name}`;
       async
       src={`https://www.googletagmanager.com/gtag/js?id=${import.meta.env.PUBLIC_GA_ID}`}
     ></script>
-    <script define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID }}>
+    <script define:vars={{ gaId: import.meta.env.PUBLIC_GA_ID, contentLang: lang }}>
       window.dataLayer = window.dataLayer || [];
       function gtag() { dataLayer.push(arguments); }
       gtag('js', new Date());
-      gtag('config', gaId);
+      gtag('config', gaId, { content_language: contentLang });
+    </script>
+
+    <!-- AI Referral Tracking -->
+    <script>
+      (function() {
+        var ref = document.referrer;
+        if (!ref) return;
+        try {
+          var h = new URL(ref).hostname;
+          var sources = {
+            'chatgpt.com': 'ChatGPT', 'chat.openai.com': 'ChatGPT',
+            'perplexity.ai': 'Perplexity',
+            'claude.ai': 'Claude',
+            'gemini.google.com': 'Gemini',
+            'copilot.microsoft.com': 'Copilot',
+            'poe.com': 'Poe',
+            'you.com': 'You.com',
+            'phind.com': 'Phind',
+            'huggingface.co': 'HuggingChat',
+            'kimi.moonshot.cn': 'Kimi'
+          };
+          for (var domain in sources) {
+            if (h === domain || h.endsWith('.' + domain)) {
+              window.gtag && gtag('event', 'ai_referral', {
+                ai_source: sources[domain],
+                page_path: location.pathname
+              });
+              break;
+            }
+          }
+        } catch(e) {}
+      })();
     </script>
 
     <!-- Google AdSense -->

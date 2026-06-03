@@ -11,7 +11,7 @@ tags:
   - ai-copywriting
   - marketing-automation
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/jasper-ai-review-2026-hero.png"
 imageAlt: "Jasper AI dashboard showing marketing campaign workflow and content templates"
 draft: false
 featured: false

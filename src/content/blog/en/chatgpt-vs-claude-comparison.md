@@ -10,8 +10,7 @@ tags:
   - ai-assistants
   - comparison
 author: "Alex Chen"
-authorTwitter: "alexchen_ai"
-image: "/images/placeholder.svg"
+image: "/images/chatgpt-vs-claude-comparison-hero.png"
 imageAlt: "Side by side comparison of ChatGPT and Claude interfaces"
 draft: false
 featured: true

@@ -1,0 +1,50 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getPublishedPosts } from '../../../utils/posts';
+import { POSTS_PER_PAGE } from '../../../config';
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const allPosts = await getPublishedPosts('zh');
+  const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+
+  return Array.from({ length: totalPages - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+    props: {
+      posts: allPosts.slice(
+        (i + 1) * POSTS_PER_PAGE,
+        (i + 2) * POSTS_PER_PAGE
+      ),
+      currentPage: i + 2,
+      totalPages,
+    },
+  }));
+};
+
+const { posts, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`博客 - 第 ${currentPage} 页`}
+  description={`浏览 AI 工具文章 - 第 ${currentPage} 页`}
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug.replace('zh/', '')}
+          image={post.data.image}
+          category={post.data.category}
+          publishDate={post.data.publishDate}
+          tags={post.data.tags}
+          baseUrl="/zh/blog"
+        />
+      ))}
+    </div>
+    <Pagination currentPage={currentPage} totalPages={totalPages} baseUrl="/zh/blog" />
+  </div>
+</BaseLayout>

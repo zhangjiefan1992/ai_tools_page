@@ -11,7 +11,7 @@ tags:
   - proofreading
   - content-editing
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/grammarly-premium-review-hero.png"
 imageAlt: "Grammarly Premium interface showing tone detection and AI writing suggestions in a document"
 draft: false
 featured: false

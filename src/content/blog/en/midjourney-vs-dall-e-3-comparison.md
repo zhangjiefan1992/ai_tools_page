@@ -11,7 +11,7 @@ tags:
   - ai-art
   - creative-tools
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/midjourney-vs-dall-e-3-comparison-hero.png"
 imageAlt: "Midjourney and DALL-E 3 AI generated image comparison"
 draft: false
 featured: false

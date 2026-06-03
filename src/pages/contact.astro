@@ -1,0 +1,30 @@
+---
+import PageLayout from '../layouts/PageLayout.astro';
+import { SITE } from '../config';
+---
+
+<PageLayout
+  title="Contact Us"
+  description={`Get in touch with ${SITE.name}. We'd love to hear from you.`}
+>
+  <div class="prose prose-lg max-w-3xl mx-auto">
+    <h1>Contact Us</h1>
+
+    <p>We'd love to hear from you! Whether you have a question, suggestion, or just want to say hello, feel free to reach out.</p>
+
+    <h2>General Inquiries</h2>
+    <p>For general questions, feedback, or suggestions about our content:</p>
+    <p><a href="mailto:contact@pick-my-ai.com">contact@pick-my-ai.com</a></p>
+
+    <h2>Content & Reviews</h2>
+    <p>Want us to review a specific AI tool? Have a correction for an existing article? Let us know:</p>
+    <p><a href="mailto:contact@pick-my-ai.com">contact@pick-my-ai.com</a></p>
+
+    <h2>Privacy Concerns</h2>
+    <p>For privacy-related inquiries or data requests:</p>
+    <p><a href="mailto:privacy@pick-my-ai.com">privacy@pick-my-ai.com</a></p>
+
+    <h2>Response Time</h2>
+    <p>We aim to respond to all inquiries within 2 business days. Thank you for your patience.</p>
+  </div>
+</PageLayout>

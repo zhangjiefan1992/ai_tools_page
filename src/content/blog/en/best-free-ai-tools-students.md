@@ -12,7 +12,7 @@ tags:
   - notion-ai
   - canva-ai
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/best-free-ai-tools-students-hero.png"
 imageAlt: "Student using free AI tools on a laptop for studying and assignments"
 draft: false
 featured: false

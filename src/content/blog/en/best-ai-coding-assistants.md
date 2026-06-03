@@ -12,8 +12,8 @@ tags:
   - tabnine
   - developer-tools
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
-imageAlt: "Developer using an AI coding assistant with inline code suggestions in their IDE"
+image: "/images/best-ai-coding-assistants-hero.png"
+imageAlt: "AI coding assistants comparison infographic: GitHub Copilot, Cursor, CodeWhisperer, Codeium, Tabnine, Replit AI"
 draft: false
 featured: false
 ---

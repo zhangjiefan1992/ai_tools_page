@@ -11,7 +11,7 @@ tags:
   - tutorial
   - brand-consistency
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/mastering-jasper-ai-brand-voice-hero.png"
 imageAlt: "Jasper AI Brand Voice setup interface showing voice profile configuration and sample content uploads"
 draft: false
 featured: false

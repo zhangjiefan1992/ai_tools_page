@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import Pagination from '../../../components/Pagination.astro';
+import { getPublishedPosts } from '../../../utils/posts';
+import { POSTS_PER_PAGE } from '../../../config';
+
+const allPosts = await getPublishedPosts('zh');
+
+const posts = allPosts.slice(0, POSTS_PER_PAGE);
+const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+---
+
+<BaseLayout
+  title="AI 工具评测、教程与对比"
+  description="精选 AI 工具深度评测与实用教程，帮你找到最适合的 AI 工具。"
+>
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {posts.map(post => (
+        <PostCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={post.slug.replace('zh/', '')}
+          image={post.data.image}
+          category={post.data.category}
+          publishDate={post.data.publishDate}
+          tags={post.data.tags}
+          baseUrl="/zh/blog"
+        />
+      ))}
+    </div>
+
+    {totalPages > 1 && (
+      <Pagination
+        currentPage={1}
+        totalPages={totalPages}
+        baseUrl="/zh/blog"
+      />
+    )}
+  </div>
+</BaseLayout>

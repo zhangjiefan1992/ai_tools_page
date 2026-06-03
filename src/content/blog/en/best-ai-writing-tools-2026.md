@@ -10,7 +10,7 @@ tags:
   - productivity
   - tools-roundup
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/best-ai-writing-tools-2026-hero.png"
 imageAlt: "Best AI writing tools comparison chart"
 draft: false
 featured: true

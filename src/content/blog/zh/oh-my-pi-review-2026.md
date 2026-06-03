@@ -10,8 +10,8 @@ tags:
   - developer-tools
   - review
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
-imageAlt: "Oh-My-Pi 终端编程 agent 测评"
+image: "/images/oh-my-pi-review-hero.png"
+imageAlt: "Oh-My-Pi 终端编程 agent 信息图：架构、功能特性和数据一览"
 draft: false
 ---
 

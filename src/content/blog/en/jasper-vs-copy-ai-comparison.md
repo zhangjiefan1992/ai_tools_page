@@ -11,7 +11,7 @@ tags:
   - comparison
   - content-creation
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/jasper-vs-copy-ai-comparison-hero.png"
 imageAlt: "Jasper and Copy.ai interface comparison for AI marketing content"
 draft: false
 featured: false

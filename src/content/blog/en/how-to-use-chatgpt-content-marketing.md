@@ -12,7 +12,7 @@ tags:
   - social-media
   - email-marketing
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/how-to-use-chatgpt-content-marketing-hero.png"
 imageAlt: "ChatGPT interface showing content marketing prompts and generated blog outlines"
 draft: false
 featured: false

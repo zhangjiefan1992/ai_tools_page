@@ -10,8 +10,8 @@ tags:
   - developer-tools
   - review
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
-imageAlt: "Oh-My-Pi terminal coding agent review"
+image: "/images/oh-my-pi-review-hero.png"
+imageAlt: "Oh-My-Pi terminal coding agent review infographic showing architecture, features, and stats"
 draft: false
 ---
 

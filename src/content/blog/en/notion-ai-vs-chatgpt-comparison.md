@@ -11,7 +11,7 @@ tags:
   - comparison
   - workflow
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/notion-ai-vs-chatgpt-comparison-hero.png"
 imageAlt: "Notion AI workspace and ChatGPT interface comparison"
 draft: false
 featured: false

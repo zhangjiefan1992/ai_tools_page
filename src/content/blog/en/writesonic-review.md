@@ -11,7 +11,7 @@ tags:
   - content-generation
   - chatsonic
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/writesonic-review-hero.png"
 imageAlt: "Writesonic AI Article Writer interface showing SEO optimization score and content generation"
 draft: false
 featured: false

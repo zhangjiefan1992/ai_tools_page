@@ -9,7 +9,7 @@ tags:
   - image-generation
   - tutorial
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/how-to-use-midjourney-hero.png"
 imageAlt: "Midjourney AI art generation interface"
 draft: false
 featured: false

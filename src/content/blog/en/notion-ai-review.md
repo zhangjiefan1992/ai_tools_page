@@ -11,7 +11,7 @@ tags:
   - note-taking
   - ai-summarization
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/notion-ai-review-hero.png"
 imageAlt: "Notion AI assistant interface showing summarization and writing features within a workspace document"
 draft: false
 featured: false

@@ -13,7 +13,7 @@ tags:
   - grammarly
   - surfer-seo
 author: "Pick My AI Team"
-image: "/images/placeholder.svg"
+image: "/images/ai-powered-writing-workflow-2026-hero.png"
 imageAlt: "Diagram showing an AI-powered writing workflow from research to optimization with multiple tools"
 draft: false
 featured: false
